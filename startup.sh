@@ -2,6 +2,7 @@
 
 echo "Downloading $SPAARCHIVEURL"
 curl $SPAARCHIVEURL --silent --output archive.tar.gz
+[ $? -eq 0 ]  || exit 1
 echo "extracting $SPAARCHIVEURL"
 tar -C /usr/share/nginx/html -zxf archive.tar.gz
 rm archive.tar.gz
